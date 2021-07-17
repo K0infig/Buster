@@ -24,36 +24,14 @@ function preload(){
 function setup() {
   createCanvas(400, 400);
   
-  redB = new Group("red");
-  greenB = new Group("green");
-  blueB = new Group("blue");
-  pinkB = new Group("pink");
-  arrowGroup = new Group("arrow");
+  redB = new Group();
+  greenB = new Group();
+  blueB = new Group();
+  pinkB = new Group();
+  arrowGroup = new Group();
 
   
-  if (arrowGroup.isTouching(redB)){
-    redB.destroyEach();
-    arrowGroup.destroyEach();
-    score=score+1;
-  }
   
-  if (arrowGroup.isTouching(pinkB)){
-    pinkB.destroyEach();
-    arrowGroup.destroyEach();
-    score=score+1;
-  }
-  
-  if (arrowGroup.isTouching(greenB)){
-    greenB.destroyEach();
-    arrowGroup.destroyEach();
-    score=score+1;
-  }
-
-  if (arrowGroup.isTouching(blueB)){
-    blueB.destroyEach();
-    arrowGroup.destroyEach();
-    score=score+1;
-  }
 
   //creating background
   scene = createSprite(0,0,400,400);
@@ -86,6 +64,30 @@ function draw() {
   if (keyDown("space")) {
     createArrow();
     
+  }
+  
+  if (arrowGroup.isTouching(redB)){
+    redB.destroyEach();
+    arrowGroup.destroyEach();
+    score=score+1;
+  }
+  
+  if (arrowGroup.isTouching(pinkB)){
+    pinkB.destroyEach();
+    arrowGroup.destroyEach();
+    score=score+1;
+  }
+  
+  if (arrowGroup.isTouching(greenB)){
+    greenB.destroyEach();
+    arrowGroup.destroyEach();
+    score=score+1;
+  }
+
+  if (arrowGroup.isTouching(blueB)){
+    blueB.destroyEach();
+    arrowGroup.destroyEach();
+    score=score+1;
   }
    
   //creating continous enemies
